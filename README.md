@@ -6,8 +6,9 @@ As you will notice, the sounds are also from there, big thanks to them.
 This was mainly due to the fact I wanted some more coding under my belt, and would like to know how tasks can be used.
 Furthermore, I would like to see if I can incorporate some kind of nice BT Config menu or a webpage.
 
-**Please do note that this is an ongoing project and not finished.**
+A working example can be seen here, with sound can be found in the [Media folder](Media/lightsaber%20working.mp4).
 
+<img src="Media/Lightsaber.jpeg" alt="Lightsaber" Height="640"/><img src="Media/Lightsaber Working.gif" alt="Lightsaber" Height="640"/>
 
 
 ## Requirements
