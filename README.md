@@ -1,6 +1,6 @@
 # Lightsaber based on ESP32
 
-This software is build open ESP32_Lightsaber and adds functionality.
+This software is build on PetervanderBurgt's ESP32 Lightsaber project https://github.com/PetervanderBurgt/ESP32_Lightsaber.
 
 The changes made are
 
