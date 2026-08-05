@@ -32,6 +32,24 @@ This software is build on PetervanderBurgt's ESP32 Lightsaber project https://gi
 3. click the Platform IO logo and chose "open project" and open the folder you created in step 1.
 4. IMPORTANT: open pinConig.h and change the preferences according to your setup! This step is very important to ensure proper functionality.
 5. If interested, snoop around the code base and make changes for even more customization! (Most things you would want to change are already in pinConfig.h)
-6. Upload your code and have fun!*
+6. Upload your code, a terminal will appear and do stuff (SEE *  !!!!)
+7. The website uses html. To allow for easy modification, this comes separately in data/SaberWeb.html (name is important!).
+   After uploading your code and putting the ESP back into bootloader (see *):
+     I. click the Platform IO icon
+     II. under "PROJECT TASKES" select your board, if you did not change anything in platformio.ini it is the "LOLIN S2-MINI" 
+     III. Click on "PLATFORM"
+     IV. click "Build Filesytem Image", the terminal will appear and do some stuff, once it is done go to V.
+     V. click "Upload Filesystem Image", once this is done, your ESP is ready for the task at hand! (As described in *, this too will probably fail but actually be fine :-)
+     
+*The ESP32 S2 uses internal USB and can therefore be a bit fussy. To make sure you can upload your program you must first put the microcontroller into bootloader mode. To do this you hold down the bootbuttom while (re)connecting the ESP to the computer by either pressing the Reset button/shorting the EN pin to GND or just (unplugging and re) pluging (in) the ESP. Alternatively, the bootbutton just shorts GPIO 0 to GND, so if you (accidentally) remove it, you can just short that pin to GND.
 
-*The ESP32 S2 uses internal USB and can therefore be a bit fussy. To make sure you can upload your program you must first put the microcontroller into bootloader mode. To do this you hold down the bootbuttom while (re)connecting the ESP to the computer by either pressing the Reset button/shorting the EN pin to GND or just (unplugging and re) pluging (in) the ESP. Alternatively, the bootbutton just shorts GPIO 0 to GND, so if you (accidentaly) remove it, you can just short that pin to GND. 
+When the ESP is in bootloader mode, open "Device Manger" app on your Windows PC (sorry this tutorial only guides Windows, for mac and Linux just Google :-)).
+Under COM Ports you should see "USB Serial Deive (COMX) note what that X is. Do the same for non-bootloader: COMY.
+After checking the COM ports, open the platformio.ini and change:
+
+monitor_port = COMY
+upload_port = COMX
+
+and save (ctrl + s). Now Platform IO is able to talk to the ESP.
+
+After uploading, the ESP will leave the bootloader and will therefor connect to a different COM port. This trips Platform IO out. As a result uploading will always return FAILED. But as long as you see "hash of data verified" it was successful so no worries!
