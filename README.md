@@ -41,7 +41,8 @@ This software is build on PetervanderBurgt's ESP32 Lightsaber project https://gi
      IV. click "Build Filesytem Image", the terminal will appear and do some stuff, once it is done go to V.
      V. click "Upload Filesystem Image", once this is done, your ESP is ready for the task at hand! (As described in *, this too will probably fail but actually be fine :-)
      
-*The ESP32 S2 uses internal USB and can therefore be a bit fussy. To make sure you can upload your program you must first put the microcontroller into bootloader mode. To do this you hold down the bootbuttom while (re)connecting the ESP to the computer by either pressing the Reset button/shorting the EN pin to GND or just (unplugging and re) pluging (in) the ESP. Alternatively, the bootbutton just shorts GPIO 0 to GND, so if you (accidentally) remove it, you can just short that pin to GND.
+# *
+The ESP32 S2 uses internal USB and can therefore be a bit fussy. To make sure you can upload your program you must first put the microcontroller into bootloader mode. To do this you hold down the bootbuttom while (re)connecting the ESP to the computer by either pressing the Reset button/shorting the EN pin to GND or just (unplugging and re) pluging (in) the ESP. Alternatively, the bootbutton just shorts GPIO 0 to GND, so if you (accidentally) remove it, you can just short that pin to GND.
 
 When the ESP is in bootloader mode, open "Device Manger" app on your Windows PC (sorry this tutorial only guides Windows, for mac and Linux just Google :-)).
 Under COM Ports you should see "USB Serial Deive (COMX) note what that X is. Do the same for non-bootloader: COMY.
